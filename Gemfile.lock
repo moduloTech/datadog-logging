@@ -53,6 +53,7 @@ GEM
 PLATFORMS
   aarch64-linux
   aarch64-linux-musl
+  ruby
   universal-darwin-22
   x86_64-linux
 
