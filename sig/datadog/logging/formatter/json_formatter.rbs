@@ -1,0 +1,11 @@
+module Datadog
+  module Logging
+    module Formatter
+      class JsonFormatter
+        def self.call: (String severity, untyped time, untyped progname, untyped msg) -> String
+
+        def call: (String severity, untyped time, untyped progname, untyped msg) -> String
+      end
+    end
+  end
+end

@@ -1,14 +1,6 @@
 # frozen_string_literal: true
 
 require_relative 'logging/version'
-
-module Datadog
-
-  module Logging
-
-    class Error < StandardError; end
-    # Your code goes here...
-
-  end
-
-end
+require_relative 'logging/railtie' if defined?(Rails::Railtie)
+require_relative 'logging/logger'
+require_relative 'logging/formatter/json_formatter'

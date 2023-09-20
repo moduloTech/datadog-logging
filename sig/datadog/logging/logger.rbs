@@ -1,0 +1,40 @@
+interface _Callable
+  def call: (untyped) -> untyped
+end
+
+module Datadog
+  module Logging
+    module Logger
+      class UserFormatter
+        EMAIL_KEYS: Array[String | Symbol]
+        ID_KEYS: Array[String | Symbol]
+        ROLE_KEYS: Array[String | Symbol]
+        USERNAME_KEYS: Array[String | Symbol]
+
+        def self.call: (untyped user) -> untyped
+
+        attr_reader user: untyped
+
+        def call: -> untyped
+      end
+
+      @log_level: String | Symbol
+
+      attr_accessor logger: ::Logger
+      attr_accessor user_formatter: _Callable
+
+      def http_request: (method: String | Symbol, path: String, controller: String, action: String, response: untyped,
+          ?headers: Hash[String, untyped], ?params: untyped, ?request_id: String, ?user: untyped) -> Integer
+
+      private
+
+      def format_user: (untyped user) -> untyped
+
+      def parsed_params: (untyped params, Hash[String, untyped] headers) -> untyped
+
+      def parsed_response: (untyped response) -> untyped
+
+      def validate_log_level: (String | Symbol level) -> (String | Symbol)
+    end
+  end
+end

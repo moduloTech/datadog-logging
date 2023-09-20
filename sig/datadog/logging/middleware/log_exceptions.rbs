@@ -1,0 +1,11 @@
+module Datadog
+  module Logging
+    module Middleware
+      class LogExceptions < ActionDispatch::DebugExceptions
+        private
+
+        def log_error: (untyped request, untyped wrapper) -> Integer
+      end
+    end
+  end
+end
