@@ -46,7 +46,9 @@ GEM
 
 PLATFORMS
   aarch64-linux
+  aarch64-linux-musl
   universal-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   datadog-logging!
