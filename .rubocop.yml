@@ -29,6 +29,8 @@ AllCops:
     - 'spec/**/*'
     - 'sig/**/*'
 
+  TargetRubyVersion: 2.6
+
 # Checks if String literals are using single quotes when no interpolation is required
 Style/StringLiterals:
   Enabled: true
