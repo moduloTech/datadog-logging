@@ -106,7 +106,7 @@ module Datadog
       end
 
       def parsed_response(response)
-        return nil if response.body.empty?
+        return nil if response.body.nil? || response.body.empty?
 
         # If response is JSON, we want to get it as Hash
         if response.header['Content-Type']&.match(%r{application/json})
