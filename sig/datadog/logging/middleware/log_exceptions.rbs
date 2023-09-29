@@ -4,7 +4,11 @@ module Datadog
       class LogExceptions < ActionDispatch::DebugExceptions
         private
 
-        def log_error: (untyped request, untyped wrapper) -> Integer
+        def log_error: (untyped request, ExceptionWrapper wrapper) -> Integer
+
+        def log_rescued_responses?: (untyped request) -> untyped
+
+        def rescue_response?: (ExceptionWrapper wrapper) -> (bool)
       end
     end
   end
